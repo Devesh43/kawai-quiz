@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 15 100% 97%;
+    --foreground: 340 30% 25%;
+
+    --card: 15 80% 98%;
+    --card-foreground: 340 30% 25%;
+
+    --popover: 15 80% 98%;
+    --popover-foreground: 340 30% 25%;
+
+    --primary: 350 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 92%;
+    --secondary-foreground: 270 40% 35%;
+
+    --muted: 30 50% 94%;
+    --muted-foreground: 340 15% 50%;
+
+    --accent: 200 80% 90%;
+    --accent-foreground: 200 50% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 350 40% 90%;
+    --input: 350 40% 90%;
+    --ring: 350 80% 75%;
+
+    --radius: 1rem;
+
+    --peach: 15 100% 90%;
+    --warm-pink: 345 100% 86%;
+    --lavender: 270 60% 92%;
+    --sky-blue: 200 80% 92%;
+    --sakura: 340 80% 85%;
+    --honey: 42 100% 78%;
+    --mint: 150 50% 85%;
+    --baby-blue: 200 70% 88%;
+
+    --sidebar-background: 15 80% 98%;
+    --sidebar-foreground: 340 30% 25%;
+    --sidebar-primary: 350 80% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 60% 92%;
+    --sidebar-accent-foreground: 270 40% 35%;
+    --sidebar-border: 350 40% 90%;
+    --sidebar-ring: 350 80% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito;
+  }
+}
+
+@layer utilities {
+  .kawaii-glow {
+    box-shadow: 0 0 20px hsl(var(--warm-pink) / 0.3), 0 0 40px hsl(var(--warm-pink) / 0.1);
+  }
+
+  .kawaii-card {
+    @apply rounded-3xl border-2 border-border bg-card p-6 shadow-lg;
+    box-shadow: 0 8px 30px hsl(var(--warm-pink) / 0.15), 0 4px 12px hsl(var(--peach) / 0.2);
+  }
+
+  .kawaii-btn {
+    @apply rounded-full px-8 py-3 font-bold text-primary-foreground transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--warm-pink)), hsl(var(--sakura)));
+    box-shadow: 0 4px 15px hsl(var(--warm-pink) / 0.4);
+  }
+
+  .kawaii-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 25px hsl(var(--warm-pink) / 0.5);
+  }
+
+  .kawaii-btn:active {
+    transform: scale(0.98);
+  }
+
+  .pill-btn {
+    @apply rounded-full px-6 py-3 font-semibold transition-all duration-300 border-2;
+    border-color: hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  .pill-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px hsl(var(--warm-pink) / 0.2);
+    border-color: hsl(var(--warm-pink));
+  }
+
+  .pill-btn.correct {
+    background: hsl(var(--mint));
+    border-color: hsl(150 50% 60%);
+  }
+
+  .pill-btn.wrong {
+    background: hsl(var(--peach));
+    border-color: hsl(0 60% 75%);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes walk-across {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(calc(100vw + 100px)); }
+}
+
+@keyframes envelope-drop {
+  0% { transform: translateY(-50px) rotate(-10deg); opacity: 0; }
+  60% { transform: translateY(10px) rotate(5deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+@keyframes letter-open {
+  0% { transform: scaleY(0); transform-origin: top; }
+  100% { transform: scaleY(1); transform-origin: top; }
+}
+
+#lovable-badge {
+  display: none !important;
+}
+
+#lovable-badge { display : none !important; }
